@@ -1,127 +1,598 @@
-<!DOCTYPE html>
-<html lang="en">
+
+    <!DOCTYPE html>
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bayzid — Professional Digital Marketer specializing in SEO, Social Media Marketing, Facebook Ads, Google Ads and online growth.">
-  <title>Bayzid | Professional Digital Marketer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Bayzid | Digital Marketer & YouTube Growth Expert</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #ff0050;
+            --secondary-color: #6c5ce7;
+            --dark-color: #0f172a;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --text-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-contact {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: #d60043;
+            box-shadow: 0 4px 15px rgba(255, 0, 80, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 2rem 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #ffe6ed;
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .hero-img {
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-img img {
+            width: 80%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* About Section */
+        .about {
+            background: #fff;
+            padding: 80px 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+        }
+
+        .section-title p {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .skills-card, .bio-card {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .stat-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            background: #fff;
+            padding: 80px 2rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .cert-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .cert-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h4 {
+            color: var(--dark-color);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .cert-card p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Contact & Footer */
+        footer {
+            background: var(--dark-color);
+            color: #fff;
+            padding: 50px 2rem 20px;
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5e1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero, .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="nav-wrap">
-    <nav class="nav container">
-      <a class="brand" href="#home">
-        <div class="brand-photo"><img src="bayzid-photo.jpg" alt="Bayzid"></div>
-        <div><strong>Bayzid</strong><span>PROFESSIONAL DIGITAL MARKETER</span></div>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
 
-  <main id="home">
-    <section class="hero container">
-      <div class="available">✦ <span>Available for Freelance Projects</span></div>
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">DIGITAL MARKETING • SEO • ADS</p>
-          <h1>Grow Your <em>Business</em><br>Online <strong>Fast &amp;<br>Organically!</strong></h1>
-          <p class="lead">Hi, I’m <b>Bayzid</b>, a professional digital marketer helping businesses improve their online visibility, reach the right audience, and generate more opportunities through smart digital marketing strategies.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#services">Explore My Services ↗</a>
-            <a class="btn secondary" href="#contact">Contact Me</a>
-          </div>
-          <div class="connect">
-            <span>CONNECT:</span>
-            <a href=https://www.facebook.com/profile.php?id=61593766232220="Facebook">f</a><a href=https://www.instagram.com/bdbayzidsm/="Instagram">◎</a>
-            <a href=https://www.linkedin.com/in/md-bayzid-296457434/="LinkedIn">in</a><a href=https://www.youtube.com/@bdbayzidsm="YouTube">▶</a>
-          </div>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo"><i class="fa-brands fa-youtube" style="color:red;"></i> Md <span>Bayzid</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+            <a href="https://wa.me/8801940550084" target="_blank" class="btn-contact">Contact Me</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <span class="hero-badge">YOUTUBE GROWTH & DIGITAL MARKETING EXPERT</span>
+            <h1>Grow Your YouTube Channel Fast & Organically!</h1>
+            <p>Hello! I'm Md Bayzid, a certified Digital Marketing Specialist. I help creators and businesses optimize YouTube channels, run targeted Ads, and rank videos top on search results.</p>
+            <a href="https://wa.me/8801940550084" target="_blank" class="btn-contact"><i class="fa-brands fa-whatsapp"></i> Get Started Now</a>
         </div>
-        <div class="hero-card">
-          <div class="badge">DIGITAL GROWTH<br><b>CAMPAIGN</b></div>
-          <div class="chart-card">
-            <span>ONLINE VISIBILITY</span>
-            <strong>Growing Your Brand</strong>
-            <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <small>Strategy • SEO • Social • Ads</small>
-          </div>
-          <div class="mini-card"><b>360°</b><span>Digital<br>Marketing</span></div>
+        <div class="hero-img">
+            <img src="profile.jpeg" alt="Md Bayzid">
         </div>
-      </div>
     </section>
 
-    <section id="about" class="section container">
-      <div class="section-head"><span>01</span><h2>About <em>Me</em></h2></div>
-      <div class="about-grid">
-        <div class="profile">
-          <div class="profile-avatar"><img src="bayzid-photo.jpg" alt="Bayzid"></div>
-          <h3>Bayzid</h3><p>Professional Digital Marketer</p>
+    <!-- About & Skills Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <p>Overview</p>
+                <h2>About Me & My Skills</h2>
+            </div>
+            <div class="about-grid">
+                <div class="bio-card">
+                    <h3>Md Bayzid</h3>
+                    <p style="color: var(--primary-color); font-weight:600; margin-bottom:1rem;">Digital Marketer & SEO Specialist</p>
+                    <p>I specialize in data-driven YouTube Marketing, Organic Video SEO, Google Ads, and Keyword Research. With certified expertise from Google and Semrush Academy, I focus on driving real engagement and growth for your brand.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>450+</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>350+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>3+</h3>
+                            <p>Years Exp.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <h3>My Core Competencies</h3>
+                    <br>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>YouTube Video SEO & Ranking</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Channel Audit & Management</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Google Ads (Search & Display)</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Keyword Research & Strategy</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 92%;"></div></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3>I help businesses grow in the digital world.</h3>
-          <p>I’m Bayzid, a freelance digital marketer focused on practical strategies that help brands become more visible online. My work covers SEO, social media marketing, paid advertising, lead generation and content-focused growth.</p>
-          <p>I believe in clear communication, consistent optimization and measurable marketing goals.</p>
-        </div>
-      </div>
     </section>
 
-    <section id="services" class="section light">
-      <div class="container">
-        <div class="section-head"><span>02</span><h2>My <em>Services</em></h2></div>
-        <div class="cards">
-          <article><b>01</b><img src="2026-09-29 at 11.41.09 AM.jpeg" alt="Project Image"><h3>SEO</h3><p>On-page, off-page, keyword research and local SEO strategies to improve search visibility.</p></article>
-          <article><b>02</b>1111/project.jpg<h3>Meta Ads</h3><p>Campaign planning, audience targeting and optimization for Meta advertising.</p></article>
-          <article><b>03</b><h3>Google Ads</h3><p>Search advertising strategy designed around relevant keywords, traffic and leads.</p></article>
-          <article><b>04</b><h3>Social Media Marketing</h3><p>Content and growth strategies to build a stronger social media presence.</p></article>
-          <article><b>05</b><h3>Google Business Profile</h3><p>Profile optimization and local visibility strategies for businesses.</p></article>
-          <article><b>06</b><h3>Lead Generation</h3><p>Digital campaigns and landing-focused strategies to attract potential customers.</p></article>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <p>What I Offer</p>
+                <h2>Our Full Suite of Services</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <img src="6.jpeg" alt="YouTube Promotion">
+                    <div class="service-content">
+                        <h3>YouTube Promotion</h3>
+                        <p>Rank YouTube videos higher with organic promotion, video SEO, and fast result strategies.</p>
+                        <a href="https://wa.me/8801940550084" class="btn-contact" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Order Now</a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <img src="7.jpeg" alt="YouTube Monetization">
+                    <div class="service-content">
+                        <h3>YouTube Monetization</h3>
+                        <p>Complete channel audit, organic growth plan, and safe monetization setup for your channel.</p>
+                        <a href="https://wa.me/8801940550084" class="btn-contact" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Order Now</a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <img src="8.jpeg" alt="Channel Management">
+                    <div class="service-content">
+                        <h3>Channel Management</h3>
+                        <p>Full service management including strategy, script guidance, thumbnails, uploads, and analytics.</p>
+                        <a href="https://wa.me/8801940550084" class="btn-contact" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Order Now</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="portfolio" class="section container">
-      <div class="section-head"><span>03</span><h2>Selected <em>Work</em></h2></div>
-      <div class="work-grid">
-        <div class="work"><span>SEO</span><h3>Search Visibility Project</h3><p>SEO strategy • Keyword Research • On-page Optimization</p></div>
-        <div class="work"><span>META ADS</span><h3>Social Advertising Campaign</h3><p>Audience Research • Campaign Setup • Optimization</p></div>
-        <div class="work"><span>LOCAL</span><h3>Local Business Growth</h3><p>Google Business Profile • Local SEO • Content</p></div>
-      </div>
-    </section>
-
-    <section id="skills" class="section dark">
-      <div class="container">
-        <div class="section-head"><span>04</span><h2>My <em>Skills</em></h2></div>
-        <div class="skills">
-          <div><label>SEO <b>90%</b></label><div><i style="width:90%"></i></div></div>
-          <div><label>Social Media Marketing <b>88%</b></label><div><i style="width:88%"></i></div></div>
-          <div><label>Facebook Ads <b>85%</b></label><div><i style="width:85%"></i></div></div>
-          <div><label>Google Ads <b>82%</b></label><div><i style="width:82%"></i></div></div>
-          <div><label>Lead Generation <b>84%</b></label><div><i style="width:84%"></i></div></div>
-          <div><label>Content Marketing <b>80%</b></label><div><i style="width:80%"></i></div></div>
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <p>Verified Skills</p>
+                <h2>My Professional Certifications</h2>
+            </div>
+            <div class="cert-grid">
+                <!-- Cert 1 -->
+                <div class="cert-card">
+                    <img src="Screenshot.png" alt="Google Ads Search Certification">
+                    <h4>Google Ads Search Certification</h4>
+                    <p>Google Skillshop</p>
+                </div>
+                <!-- Cert 2 -->
+                <div class="cert-card">
+                    <img src="Screenshot (1).png" alt="Google Ads Measurement">
+                    <h4>Google Ads Measurement Certification</h4>
+                    <p>Google Skillshop</p>
+                </div>
+                <!-- Cert 3 -->
+                <div class="cert-card">
+                    <img src="Screenshot (2).png" alt="Google Ads Display">
+                    <h4>Google Ads Display Certification</h4>
+                    <p>Google Skillshop</p>
+                </div>
+                <!-- Cert 4 -->
+                <div class="cert-card">
+                    <img src="Screenshot (3).jpg" alt="Semrush Keyword Research">
+                    <h4>Keyword Research Essentials</h4>
+                    <p>Semrush Academy</p>
+                </div>
+                <!-- Cert 5 -->
+                <div class="cert-card">
+                    <img src="Screenshot (4).jpg" alt="Semrush Social Media">
+                    <h4>Social Media Marketing Crash Course</h4>
+                    <p>Semrush Academy</p>
+                </div>
+                <!-- Cert 6 -->
+                <div class="cert-card">
+                    <img src="Screenshot (5).jpg" alt="Semrush Local SEO">
+                    <h4>Local SEO Essentials</h4>
+                    <p>Semrush Academy</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="contact" class="section container">
-      <div class="section-head"><span>05</span><h2>Let’s <em>Work Together</em></h2></div>
-      <div class="contact-box">
-        <div><h3>Have a project in mind?</h3><p>Contact me and let’s discuss how digital marketing can help your business grow.</p></div>
-        <div class="contact-list">
-          <a href="mailto:bdbayzidsm@gmail.com">✉ bdbayzidsm@gmail.com</a>
-          <a href="https://wa.me/+8801940550084">◉ WhatsApp: +8801940550084</a>
-          <a href="tel:+8801940550084">☎ Phone: +8801940550084</a>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <h2>Let's Work Together On Your Next Project!</h2>
+            <div class="contact-info">
+                <div class="contact-item"><i class="fa-solid fa-envelope"></i> bdbayzidsm@gmail.com</div>
+                <div class="contact-item"><i class="fa-solid fa-phone"></i> +8801940550084</div>
+            </div>
+            <div class="social-links">
+                <a href="https://wa.me/8801940550084" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:bdbayzidsm@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Md Bayzid. All Rights Reserved.
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer><div class="container">© 2026 Bayzid. All Rights Reserved. <span>Professional Digital Marketer</span></div></footer>
-  <script src="script.js"></script>
 </body>
 </html>
